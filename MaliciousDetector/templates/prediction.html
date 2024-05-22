@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malicious URL Detection Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-<long hash>" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<h5 style="padding-left:20px;padding-bottom:5px;background-color:black;"><a style="color:white;" href="{% url 'home' %}">Back to Home</a></h5>
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="result-card p-5 text-center">
+            {% if status == "BENIGN" %}
+            <h1 class="mb-4 text-success">{{ status }} URL</h1>
+            {% else %}
+            <h1 class="mb-4 text-danger">{{ status }} URL</h1>
+            {% endif %}
+
+            {% if status == "BENIGN" %}
+            <p class="lead mb-0">The provided URL appears to be safe and does not pose any known threats.</p>
+            {% else %}
+            <p class="lead mb-0">The provided URL is potentially malicious and may contain harmful content or lead to malicious activities.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

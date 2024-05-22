@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malicious Website Detection</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .jumbotron {
+            background-image: url('{% static "images/bg3.gif" %}');
+            background-size: cover;
+
+            background-position: center top;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        .feature-box {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .feature-icon {
+            font-size: 48px;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .display-4 {
+            font-family: 'Cinzel', serif;
+            font-weight: bold; /* Optionally, adjust the font weight */
+            color: white; /* Optionally, adjust the font color */
+        }
+    </style>
+</head>
+<body>
+    <div class="jumbotron jumbotron-fluid text-center">
+        <div class="container">
+            <h1 class="display-4">Malicious Website Detection</h1>
+            <p class="lead">Protect your online safety with our advanced detection system.</p>
+            <a href="{% url 'url_check' %}" class="btn btn-primary btn-lg">Get Started</a>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Features</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="fas fa-shield-alt feature-icon"></i>
+                    <h3>Real-time Scanning</h3>
+                    <p>Our system continuously scans websites for any signs of malicious activity, providing real-time protection.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="fas fa-search feature-icon"></i>
+                    <h3>Comprehensive Analysis</h3>
+                    <p>Our advanced algorithms analyze websites for various threats, including phishing, malware, and more.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="fas fa-sync-alt feature-icon"></i>
+                    <h3>Regular Updates</h3>
+                    <p>Our database is regularly updated to ensure the latest threats are detected and mitigated.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>&copy; 2024 Malicious Website Detection. All rights reserved.</p>
+    </footer>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</body>
+</html>
